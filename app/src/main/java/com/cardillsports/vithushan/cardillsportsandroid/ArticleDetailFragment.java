@@ -42,14 +42,14 @@ public class ArticleDetailFragment extends Fragment {
                              Bundle savedInstanceState) {
         LinearLayout rootView = (LinearLayout) inflater.inflate(R.layout.article_detail, container, false);
 
-        ImageView imageView = new ImageView(getContext());
+        ImageView imageView = (ImageView) rootView.findViewById(R.id.article_image);
         Picasso.with(getContext())
                 .load("http://s3.amazonaws.com/cardillsports/" + mArticle.ImageLink)
                 .placeholder(R.drawable.placeholder)
                 .fit().centerInside()
                 .into(imageView);
-        rootView.addView(imageView);
 
+        LinearLayout articleContent = (LinearLayout) rootView.findViewById(R.id.article_text);
         for (ArticleItem item : mArticle.ArticleItems) {
             AppCompatTextView textView = new AppCompatTextView(getContext());
             if ("Text".equals(item.Type) && item.Paragraph != null) {
@@ -57,7 +57,7 @@ public class ArticleDetailFragment extends Fragment {
                 textView.setTextColor(ContextCompat.getColor(getContext(), R.color.colorAccent));
                 textView.setPadding(10,10,10,10);
             }
-            rootView.addView(textView);
+            articleContent.addView(textView);
         }
         return rootView;
     }

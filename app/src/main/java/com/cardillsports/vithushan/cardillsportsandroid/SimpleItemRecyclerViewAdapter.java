@@ -57,6 +57,8 @@ public class SimpleItemRecyclerViewAdapter extends RecyclerView.Adapter<ViewHold
                 .fit().centerInside()
                  .into(holder.mImageView);
 
+        holder.mArticleAuthorView.setText(holder.mItem.Owner.firstName + " " + holder.mItem.Owner.lastName);
+        holder.mArticleTitleView.setText(holder.mItem.Name);
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
