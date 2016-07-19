@@ -1,4 +1,4 @@
-package com.cardillsports.vithushan.cardillsportsandroid;
+package com.cardillsports.vithushan.cardillsportsandroid.main;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

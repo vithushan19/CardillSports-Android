@@ -1,6 +1,10 @@
-package com.cardillsports.vithushan.cardillsportsandroid;
+package com.cardillsports.vithushan.cardillsportsandroid.main;
 
 import android.util.Log;
+
+import com.cardillsports.vithushan.cardillsportsandroid.models.Article;
+import com.cardillsports.vithushan.cardillsportsandroid.service.CardillSportsClient;
+import com.cardillsports.vithushan.cardillsportsandroid.service.ServiceGenerator;
 
 import java.util.List;
 

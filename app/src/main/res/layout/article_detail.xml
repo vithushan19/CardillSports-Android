@@ -8,7 +8,7 @@
           android:textIsSelectable="true"
           android:orientation="vertical"
           android:background="@color/colorPrimary"
-          tools:context="com.cardillsports.vithushan.cardillsportsandroid.MainActivity">
+          tools:context=".main.MainActivity">
 
     <ImageView
         android:id="@+id/article_image"

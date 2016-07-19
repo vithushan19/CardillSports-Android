@@ -1,9 +1,12 @@
-package com.cardillsports.vithushan.cardillsportsandroid;
+package com.cardillsports.vithushan.cardillsportsandroid.main;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.cardillsports.vithushan.cardillsportsandroid.R;
+import com.cardillsports.vithushan.cardillsportsandroid.models.Article;
 
 /**
  * Created by vithushan on 7/18/16.

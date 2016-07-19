@@ -1,4 +1,4 @@
-package com.cardillsports.vithushan.cardillsportsandroid;
+package com.cardillsports.vithushan.cardillsportsandroid.main;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.cardillsports.vithushan.cardillsportsandroid.R;
+import com.cardillsports.vithushan.cardillsportsandroid.models.Article;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.picasso.OkHttpDownloader;
 import com.squareup.picasso.Picasso;
@@ -48,7 +50,7 @@ public class ArticleListFragment extends Fragment implements AbstractViewBinder<
 
     @Override
     public void onDataLoaded(List<Article> data) {
-        SimpleItemRecyclerViewAdapter adapter = new SimpleItemRecyclerViewAdapter(data, getContext(), mPicasso);
+        ArticleAdapter adapter = new ArticleAdapter(data, getContext(), mPicasso);
         mRecyclerView.setAdapter(adapter);
     }
 }

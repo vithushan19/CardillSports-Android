@@ -1,4 +1,4 @@
-package com.cardillsports.vithushan.cardillsportsandroid;
+package com.cardillsports.vithushan.cardillsportsandroid.models;
 
 import android.os.Parcel;
 import android.os.Parcelable;

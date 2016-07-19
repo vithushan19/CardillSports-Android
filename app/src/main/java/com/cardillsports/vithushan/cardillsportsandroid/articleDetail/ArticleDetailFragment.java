@@ -1,4 +1,4 @@
-package com.cardillsports.vithushan.cardillsportsandroid;
+package com.cardillsports.vithushan.cardillsportsandroid.articleDetail;
 
 
 import android.os.Bundle;
@@ -13,6 +13,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.cardillsports.vithushan.cardillsportsandroid.R;
+import com.cardillsports.vithushan.cardillsportsandroid.models.Article;
+import com.cardillsports.vithushan.cardillsportsandroid.models.ArticleItem;
 import com.squareup.picasso.Picasso;
 
 public class ArticleDetailFragment extends Fragment {

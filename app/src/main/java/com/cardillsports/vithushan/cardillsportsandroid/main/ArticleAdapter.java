@@ -1,4 +1,4 @@
-package com.cardillsports.vithushan.cardillsportsandroid;
+package com.cardillsports.vithushan.cardillsportsandroid.main;
 
 
 import android.content.Context;
@@ -12,6 +12,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.cardillsports.vithushan.cardillsportsandroid.R;
+import com.cardillsports.vithushan.cardillsportsandroid.articleDetail.ArticleDetailActivity;
+import com.cardillsports.vithushan.cardillsportsandroid.models.Article;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -19,7 +22,7 @@ import java.util.List;
 /**
  * Created by vithushan on 7/18/16.
  */
-public class SimpleItemRecyclerViewAdapter extends RecyclerView.Adapter<ViewHolder> {
+public class ArticleAdapter extends RecyclerView.Adapter<ViewHolder> {
 
     private final List<Article> mValues;
 
@@ -29,7 +32,7 @@ public class SimpleItemRecyclerViewAdapter extends RecyclerView.Adapter<ViewHold
 
     private final FragmentManager mFragmentManager;
 
-    public SimpleItemRecyclerViewAdapter(List<Article> items, Context context, Picasso picasso) {
+    public ArticleAdapter(List<Article> items, Context context, Picasso picasso) {
         mValues = items;
         mContext = context;
         mPicasso = picasso;
@@ -57,7 +60,7 @@ public class SimpleItemRecyclerViewAdapter extends RecyclerView.Adapter<ViewHold
                 .fit().centerInside()
                  .into(holder.mImageView);
 
-        holder.mArticleAuthorView.setText(holder.mItem.Owner.firstName + " " + holder.mItem.Owner.lastName);
+        holder.mArticleAuthorView.setText(holder.mItem.Owner.firstName + " " +holder.mItem.Owner.lastName);
         holder.mArticleTitleView.setText(holder.mItem.Name);
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override

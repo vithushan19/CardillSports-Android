@@ -23,6 +23,7 @@
         android:layout_height="wrap_content"
         android:paddingLeft="@dimen/article_text_padding"
         android:paddingBottom="@dimen/article_text_padding"
+        android:textSize="@dimen/article_title_size"
         android:layout_alignBottom="@id/image"
         android:textColor="#FFFFFF"
 
@@ -35,7 +36,7 @@
         android:paddingLeft="@dimen/article_text_padding"
         android:paddingRight="@dimen/article_text_padding"
         android:paddingBottom="5dp"
-        android:textSize="@dimen/article_title_size"
+
         android:layout_above="@id/article_title"
         android:textColor="#FFFFFF"
         />

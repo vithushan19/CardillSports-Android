@@ -1,4 +1,4 @@
-package com.cardillsports.vithushan.cardillsportsandroid;
+package com.cardillsports.vithushan.cardillsportsandroid.service;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;

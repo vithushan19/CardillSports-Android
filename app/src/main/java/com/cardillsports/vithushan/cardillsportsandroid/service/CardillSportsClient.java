@@ -1,4 +1,6 @@
-package com.cardillsports.vithushan.cardillsportsandroid;
+package com.cardillsports.vithushan.cardillsportsandroid.service;
+
+import com.cardillsports.vithushan.cardillsportsandroid.models.Article;
 
 import java.util.List;
 
