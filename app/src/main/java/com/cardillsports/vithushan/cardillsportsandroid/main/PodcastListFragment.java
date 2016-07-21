@@ -19,10 +19,10 @@ import java.util.List;
 /**
  * Created by vithushan on 7/18/16.
  */
-public class ArticleListFragment extends Fragment implements AbstractViewBinder<List<CardillContent>> {
+public class PodcastListFragment extends Fragment implements AbstractViewBinder<List<CardillContent>> {
 
 
-    private ArticlePresenter mArticlePresenter;
+    private PodcastPresenter mPodcastPresenter;
     private RecyclerView mRecyclerView;
     private Picasso mPicasso;
     private OkHttpClient mOkHttpClient;
@@ -30,7 +30,7 @@ public class ArticleListFragment extends Fragment implements AbstractViewBinder<
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        mArticlePresenter = new ArticlePresenter(this);
+        mPodcastPresenter = new PodcastPresenter(this);
 
         mOkHttpClient = new OkHttpClient();
         mPicasso = new Picasso.Builder(getContext())
@@ -45,7 +45,7 @@ public class ArticleListFragment extends Fragment implements AbstractViewBinder<
     @Override
     public void onResume() {
         super.onResume();
-        mArticlePresenter.loadData();
+        mPodcastPresenter.loadData();
     }
 
     @Override

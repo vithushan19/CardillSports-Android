@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.cardillsports.vithushan.cardillsportsandroid.R;
-import com.cardillsports.vithushan.cardillsportsandroid.models.CardillContent;
+import com.cardillsports.vithushan.cardillsportsandroid.models.CreatorModel;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.picasso.OkHttpDownloader;
 import com.squareup.picasso.Picasso;
@@ -17,12 +17,12 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 /**
- * Created by vithushan on 7/18/16.
+ * Created by vithushan on 7/21/16.
  */
-public class ArticleListFragment extends Fragment implements AbstractViewBinder<List<CardillContent>> {
+public class CreatorListFragment extends Fragment implements AbstractViewBinder<List<CreatorModel>> {
 
 
-    private ArticlePresenter mArticlePresenter;
+    private CreatorPresenter mCreatorPresenter;
     private RecyclerView mRecyclerView;
     private Picasso mPicasso;
     private OkHttpClient mOkHttpClient;
@@ -30,7 +30,7 @@ public class ArticleListFragment extends Fragment implements AbstractViewBinder<
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        mArticlePresenter = new ArticlePresenter(this);
+        mCreatorPresenter = new CreatorPresenter(this);
 
         mOkHttpClient = new OkHttpClient();
         mPicasso = new Picasso.Builder(getContext())
@@ -45,12 +45,12 @@ public class ArticleListFragment extends Fragment implements AbstractViewBinder<
     @Override
     public void onResume() {
         super.onResume();
-        mArticlePresenter.loadData();
+        mCreatorPresenter.loadData();
     }
 
     @Override
-    public void onDataLoaded(List<CardillContent> data) {
-        ArticleAdapter adapter = new ArticleAdapter(data, getContext(), mPicasso);
+    public void onDataLoaded(List<CreatorModel> data) {
+        CreatorAdapter adapter = new CreatorAdapter(data, getContext(), mPicasso);
         mRecyclerView.setAdapter(adapter);
     }
 }

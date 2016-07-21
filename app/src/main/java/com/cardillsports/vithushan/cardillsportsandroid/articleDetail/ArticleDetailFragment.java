@@ -14,7 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.cardillsports.vithushan.cardillsportsandroid.R;
-import com.cardillsports.vithushan.cardillsportsandroid.models.Article;
+import com.cardillsports.vithushan.cardillsportsandroid.models.CardillContent;
 import com.cardillsports.vithushan.cardillsportsandroid.models.ArticleItem;
 import com.squareup.picasso.Picasso;
 
@@ -24,7 +24,7 @@ public class ArticleDetailFragment extends Fragment {
      * represents.
      */
     public static final String ARG_ITEM_ID = "item_id";
-    public Article mArticle;
+    public CardillContent mCardillContent;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -36,8 +36,8 @@ public class ArticleDetailFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mArticle = getArguments().getParcelable("ARTICLE");
-        Toast.makeText(getContext(), mArticle.Name, Toast.LENGTH_SHORT).show();
+        mCardillContent = getArguments().getParcelable("ARTICLE");
+        Toast.makeText(getContext(), mCardillContent.Name, Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -47,20 +47,27 @@ public class ArticleDetailFragment extends Fragment {
 
         ImageView imageView = (ImageView) rootView.findViewById(R.id.article_image);
         Picasso.with(getContext())
-                .load("http://s3.amazonaws.com/cardillsports/" + mArticle.ImageLink)
+                .load("http://s3.amazonaws.com/cardillsports/" + mCardillContent.ImageLink)
                 .placeholder(R.drawable.placeholder)
                 .fit().centerInside()
                 .into(imageView);
 
         LinearLayout articleContent = (LinearLayout) rootView.findViewById(R.id.article_text);
-        for (ArticleItem item : mArticle.ArticleItems) {
-            AppCompatTextView textView = new AppCompatTextView(getContext());
+        for (ArticleItem item : mCardillContent.ArticleItems) {
+
             if ("Text".equals(item.Type) && item.Paragraph != null) {
+                AppCompatTextView textView = new AppCompatTextView(getContext());
+
                 textView.setText(Html.fromHtml(item.Paragraph));
                 textView.setTextColor(ContextCompat.getColor(getContext(), R.color.colorAccent));
                 textView.setPadding(10,10,10,10);
+
+                articleContent.addView(textView);
             }
-            articleContent.addView(textView);
+            if ("SoundCloud".equals(item.Type)) {
+
+            }
+
         }
         return rootView;
     }

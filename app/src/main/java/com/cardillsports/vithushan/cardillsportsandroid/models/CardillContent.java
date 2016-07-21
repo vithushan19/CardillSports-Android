@@ -8,33 +8,33 @@ import java.util.List;
 /**
  * Created by vithushan on 7/18/16.
  */
-public class Article implements Parcelable{
+public class CardillContent implements Parcelable{
     public String _id;
     public String Name;
     public String ImageLink;
-    public CreatorModel Owner;
+    public CreatorModelId Owner;
     public List<ArticleItem> ArticleItems;
     public List<Comment> Comments;
     public float Rating;
 
-    protected Article(Parcel in) {
+    protected CardillContent(Parcel in) {
         _id = in.readString();
         Name = in.readString();
         ImageLink = in.readString();
-        Owner = CreatorModel.CREATOR.createFromParcel(in);
+        Owner = CreatorModelId.CREATOR.createFromParcel(in);
         ArticleItems = in.createTypedArrayList(ArticleItem.CREATOR);
         Rating = in.readFloat();
     }
 
-    public static final Creator<Article> CREATOR = new Creator<Article>() {
+    public static final Creator<CardillContent> CREATOR = new Creator<CardillContent>() {
         @Override
-        public Article createFromParcel(Parcel in) {
-            return new Article(in);
+        public CardillContent createFromParcel(Parcel in) {
+            return new CardillContent(in);
         }
 
         @Override
-        public Article[] newArray(int size) {
-            return new Article[size];
+        public CardillContent[] newArray(int size) {
+            return new CardillContent[size];
         }
     };
 

@@ -1,6 +1,7 @@
 package com.cardillsports.vithushan.cardillsportsandroid.service;
 
-import com.cardillsports.vithushan.cardillsportsandroid.models.Article;
+import com.cardillsports.vithushan.cardillsportsandroid.models.CardillContent;
+import com.cardillsports.vithushan.cardillsportsandroid.models.CreatorModel;
 
 import java.util.List;
 
@@ -12,5 +13,11 @@ import retrofit2.http.GET;
  */
 public interface CardillSportsClient {
     @GET("/api/articles")
-    Call<List<Article>> articles();
+    Call<List<CardillContent>> articles();
+
+    @GET("/api/podcasts")
+    Call<List<CardillContent>> podcasts();
+
+    @GET("/api/creators")
+    Call<List<CreatorModel>> creators();
 }

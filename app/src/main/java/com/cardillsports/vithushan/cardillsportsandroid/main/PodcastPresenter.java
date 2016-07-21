@@ -15,19 +15,19 @@ import retrofit2.Response;
 /**
  * Created by vithushan on 7/18/16.
  */
-public class ArticlePresenter {
+public class PodcastPresenter {
 
     private CardillSportsClient mClient;
     private AbstractViewBinder<List<CardillContent>> mViewBinder;
 
 
-    ArticlePresenter(AbstractViewBinder<List<CardillContent>> viewBinder) {
+    PodcastPresenter(AbstractViewBinder<List<CardillContent>> viewBinder) {
         mClient = ServiceGenerator.createService(CardillSportsClient.class);
         mViewBinder = viewBinder;
     }
 
     public void loadData() {
-        Call<List<CardillContent>> call = mClient.articles();
+        Call<List<CardillContent>> call = mClient.podcasts();
         call.enqueue(new Callback<List<CardillContent>>() {
             @Override
             public void onResponse(Call<List<CardillContent>> responseCall, Response<List<CardillContent>> response) {

@@ -6,25 +6,23 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cardillsports.vithushan.cardillsportsandroid.R;
-import com.cardillsports.vithushan.cardillsportsandroid.models.Article;
+import com.cardillsports.vithushan.cardillsportsandroid.models.CreatorModel;
 
 /**
  * Created by vithushan on 7/18/16.
  */
-public class ViewHolder extends RecyclerView.ViewHolder {
+public class CreatorViewHolder extends RecyclerView.ViewHolder {
     public final View mView;
     public final ImageView mImageView;
-    public final TextView mArticleTitleView;
     public final TextView mArticleAuthorView;
 
-    public Article mItem;
+    public CreatorModel mItem;
 
-    public ViewHolder(View view) {
+    public CreatorViewHolder(View view) {
         super(view);
         mView = view;
         mImageView = (ImageView) view.findViewById(R.id.image);
-        mArticleAuthorView = (TextView) view.findViewById(R.id.article_author);
-        mArticleTitleView = (TextView) view.findViewById(R.id.article_title);
+        mArticleAuthorView = (TextView) view.findViewById(R.id.creator_name);
     }
 
     @Override

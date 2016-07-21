@@ -7,14 +7,12 @@ import android.os.Parcelable;
  * Created by vithushan on 7/18/16.
  */
 public class CreatorModel implements Parcelable {
-    public String firstName;
-    public String lastName;
-    public String userPicture;
+    public CreatorModelId _id;
+    public int articleCount;
 
     protected CreatorModel(Parcel in) {
-        firstName = in.readString();
-        lastName = in.readString();
-        userPicture = in.readString();
+        _id = CreatorModelId.CREATOR.createFromParcel(in);
+        articleCount = in.readInt();
     }
 
     public static final Creator<CreatorModel> CREATOR = new Creator<CreatorModel>() {
@@ -36,8 +34,7 @@ public class CreatorModel implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(firstName);
-        parcel.writeString(lastName);
-        parcel.writeString(userPicture);
+        _id.writeToParcel(parcel, i);
+        parcel.writeInt(articleCount);
     }
 }

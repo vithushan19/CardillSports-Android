@@ -2,7 +2,7 @@ package com.cardillsports.vithushan.cardillsportsandroid.main;
 
 import android.util.Log;
 
-import com.cardillsports.vithushan.cardillsportsandroid.models.CardillContent;
+import com.cardillsports.vithushan.cardillsportsandroid.models.CreatorModel;
 import com.cardillsports.vithushan.cardillsportsandroid.service.CardillSportsClient;
 import com.cardillsports.vithushan.cardillsportsandroid.service.ServiceGenerator;
 
@@ -15,24 +15,24 @@ import retrofit2.Response;
 /**
  * Created by vithushan on 7/18/16.
  */
-public class ArticlePresenter {
+public class CreatorPresenter {
 
     private CardillSportsClient mClient;
-    private AbstractViewBinder<List<CardillContent>> mViewBinder;
+    private AbstractViewBinder<List<CreatorModel>> mViewBinder;
 
 
-    ArticlePresenter(AbstractViewBinder<List<CardillContent>> viewBinder) {
+    CreatorPresenter(AbstractViewBinder<List<CreatorModel>> viewBinder) {
         mClient = ServiceGenerator.createService(CardillSportsClient.class);
         mViewBinder = viewBinder;
     }
 
     public void loadData() {
-        Call<List<CardillContent>> call = mClient.articles();
-        call.enqueue(new Callback<List<CardillContent>>() {
+        Call<List<CreatorModel>> call = mClient.creators();
+        call.enqueue(new Callback<List<CreatorModel>>() {
             @Override
-            public void onResponse(Call<List<CardillContent>> responseCall, Response<List<CardillContent>> response) {
+            public void onResponse(Call<List<CreatorModel>> responseCall, Response<List<CreatorModel>> response) {
                 if (response.isSuccessful()) {
-                    List<CardillContent> cardillContents = response.body();
+                    List<CreatorModel> cardillContents = response.body();
                     mViewBinder.onDataLoaded(cardillContents);
                 } else {
                     // error response, no access to resource?
@@ -40,7 +40,7 @@ public class ArticlePresenter {
             }
 
             @Override
-            public void onFailure(Call<List<CardillContent>> call, Throwable t) {
+            public void onFailure(Call<List<CreatorModel>> call, Throwable t) {
                 Log.d("Error", t.getMessage());
             }
         });

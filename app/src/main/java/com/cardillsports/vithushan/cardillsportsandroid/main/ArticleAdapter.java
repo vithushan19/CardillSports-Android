@@ -14,7 +14,7 @@ import android.view.ViewGroup;
 
 import com.cardillsports.vithushan.cardillsportsandroid.R;
 import com.cardillsports.vithushan.cardillsportsandroid.articleDetail.ArticleDetailActivity;
-import com.cardillsports.vithushan.cardillsportsandroid.models.Article;
+import com.cardillsports.vithushan.cardillsportsandroid.models.CardillContent;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -22,9 +22,9 @@ import java.util.List;
 /**
  * Created by vithushan on 7/18/16.
  */
-public class ArticleAdapter extends RecyclerView.Adapter<ViewHolder> {
+public class ArticleAdapter extends RecyclerView.Adapter<ContentViewHolder> {
 
-    private final List<Article> mValues;
+    private final List<CardillContent> mValues;
 
     private final Context mContext;
     private final GradientDrawable gradientDrawable;
@@ -32,7 +32,7 @@ public class ArticleAdapter extends RecyclerView.Adapter<ViewHolder> {
 
     private final FragmentManager mFragmentManager;
 
-    public ArticleAdapter(List<Article> items, Context context, Picasso picasso) {
+    public ArticleAdapter(List<CardillContent> items, Context context, Picasso picasso) {
         mValues = items;
         mContext = context;
         mPicasso = picasso;
@@ -45,14 +45,14 @@ public class ArticleAdapter extends RecyclerView.Adapter<ViewHolder> {
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ContentViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.article_list_content, parent, false);
-        return new ViewHolder(view);
+        return new ContentViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(final ViewHolder holder, int position) {
+    public void onBindViewHolder(final ContentViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
         mPicasso.with(mContext)
                 .load("http://s3.amazonaws.com/cardillsports/" + holder.mItem.ImageLink)

@@ -12,7 +12,7 @@ import com.cardillsports.vithushan.cardillsportsandroid.R;
 import com.cardillsports.vithushan.cardillsportsandroid.main.MainActivity;
 
 /**
- * An activity representing a single Article detail screen. This
+ * An activity representing a single CardillContent detail screen. This
  * activity is only used narrow width devices. On tablet-size devices,
  * item details are presented side-by-side with a list of items
  * in a {@link }.
