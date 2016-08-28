@@ -1,4 +1,4 @@
-package com.cardillsports.vithushan.cardillsportsandroid;
+package com.cardillsports.vithushan.cardillsportsandroid.models;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -6,26 +6,26 @@ import android.os.Parcelable;
 /**
  * Created by vithushan on 7/18/16.
  */
-public class CreatorModel implements Parcelable {
+public class CreatorModelId implements Parcelable {
     public String firstName;
     public String lastName;
     public String userPicture;
 
-    protected CreatorModel(Parcel in) {
+    protected CreatorModelId(Parcel in) {
         firstName = in.readString();
         lastName = in.readString();
         userPicture = in.readString();
     }
 
-    public static final Creator<CreatorModel> CREATOR = new Creator<CreatorModel>() {
+    public static final Creator<CreatorModelId> CREATOR = new Creator<CreatorModelId>() {
         @Override
-        public CreatorModel createFromParcel(Parcel in) {
-            return new CreatorModel(in);
+        public CreatorModelId createFromParcel(Parcel in) {
+            return new CreatorModelId(in);
         }
 
         @Override
-        public CreatorModel[] newArray(int size) {
-            return new CreatorModel[size];
+        public CreatorModelId[] newArray(int size) {
+            return new CreatorModelId[size];
         }
     };
 

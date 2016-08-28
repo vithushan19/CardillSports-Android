@@ -1,4 +1,4 @@
-package com.cardillsports.vithushan.cardillsportsandroid;
+package com.cardillsports.vithushan.cardillsportsandroid.main;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.cardillsports.vithushan.cardillsportsandroid.R;
+import com.cardillsports.vithushan.cardillsportsandroid.models.CardillContent;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.picasso.OkHttpDownloader;
 import com.squareup.picasso.Picasso;
@@ -17,10 +19,10 @@ import java.util.List;
 /**
  * Created by vithushan on 7/18/16.
  */
-public class ArticleListFragment extends Fragment implements AbstractViewBinder<List<Article>> {
+public class PodcastListFragment extends Fragment implements AbstractViewBinder<List<CardillContent>> {
 
 
-    private ArticlePresenter mArticlePresenter;
+    private PodcastPresenter mPodcastPresenter;
     private RecyclerView mRecyclerView;
     private Picasso mPicasso;
     private OkHttpClient mOkHttpClient;
@@ -28,7 +30,7 @@ public class ArticleListFragment extends Fragment implements AbstractViewBinder<
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        mArticlePresenter = new ArticlePresenter(this);
+        mPodcastPresenter = new PodcastPresenter(this);
 
         mOkHttpClient = new OkHttpClient();
         mPicasso = new Picasso.Builder(getContext())
@@ -43,12 +45,12 @@ public class ArticleListFragment extends Fragment implements AbstractViewBinder<
     @Override
     public void onResume() {
         super.onResume();
-        mArticlePresenter.loadData();
+        mPodcastPresenter.loadData();
     }
 
     @Override
-    public void onDataLoaded(List<Article> data) {
-        SimpleItemRecyclerViewAdapter adapter = new SimpleItemRecyclerViewAdapter(data, getContext(), mPicasso);
+    public void onDataLoaded(List<CardillContent> data) {
+        ArticleAdapter adapter = new ArticleAdapter(data, getContext(), mPicasso);
         mRecyclerView.setAdapter(adapter);
     }
 }

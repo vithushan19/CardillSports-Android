@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "865031645190",
+    "firebase_url": "https://peaceful-impact-761.firebaseio.com",
+    "project_id": "peaceful-impact-761",
+    "storage_bucket": "peaceful-impact-761.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:865031645190:android:b41c2a528f0b21c7",
+        "android_client_info": {
+          "package_name": "com.cardillsports.vithushan.cardillsportsandroid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "865031645190-vk6aegipjqpr45t6vd5pfvkrisrdmm34.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxQP32aN_Pj_jQYZybto2fPjziREtuQ6M"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
