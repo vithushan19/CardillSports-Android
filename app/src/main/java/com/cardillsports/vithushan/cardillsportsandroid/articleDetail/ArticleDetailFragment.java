@@ -15,7 +15,6 @@ import android.widget.Toast;
 
 import com.cardillsports.vithushan.cardillsportsandroid.R;
 import com.cardillsports.vithushan.cardillsportsandroid.models.CardillContent;
-import com.cardillsports.vithushan.cardillsportsandroid.models.ArticleItem;
 import com.squareup.picasso.Picasso;
 
 public class ArticleDetailFragment extends Fragment {
@@ -47,28 +46,25 @@ public class ArticleDetailFragment extends Fragment {
 
         ImageView imageView = (ImageView) rootView.findViewById(R.id.article_image);
         Picasso.with(getContext())
-                .load("http://s3.amazonaws.com/cardillsports/" + mCardillContent.ImageLink)
+                .load("http:" + mCardillContent.Image)
                 .placeholder(R.drawable.placeholder)
                 .fit().centerInside()
                 .into(imageView);
 
         LinearLayout articleContent = (LinearLayout) rootView.findViewById(R.id.article_text);
-        for (ArticleItem item : mCardillContent.ArticleItems) {
+        String body = mCardillContent.Body;
 
-            if ("Text".equals(item.Type) && item.Paragraph != null) {
-                AppCompatTextView textView = new AppCompatTextView(getContext());
 
-                textView.setText(Html.fromHtml(item.Paragraph));
-                textView.setTextColor(ContextCompat.getColor(getContext(), R.color.colorAccent));
-                textView.setPadding(10,10,10,10);
+        AppCompatTextView textView = new AppCompatTextView(getContext());
 
-                articleContent.addView(textView);
-            }
-            if ("SoundCloud".equals(item.Type)) {
+        textView.setText(Html.fromHtml(body));
+        textView.setTextColor(ContextCompat.getColor(getContext(), R.color.colorAccent));
+        textView.setPadding(10,10,10,10);
 
-            }
+        articleContent.addView(textView);
 
-        }
+
+
         return rootView;
     }
 

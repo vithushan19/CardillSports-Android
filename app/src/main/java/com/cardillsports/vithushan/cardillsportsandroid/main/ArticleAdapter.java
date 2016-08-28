@@ -55,12 +55,12 @@ public class ArticleAdapter extends RecyclerView.Adapter<ContentViewHolder> {
     public void onBindViewHolder(final ContentViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
         mPicasso.with(mContext)
-                .load("http://s3.amazonaws.com/cardillsports/" + holder.mItem.ImageLink)
+                .load("http:" + holder.mItem.Image)
                 .placeholder(R.drawable.placeholder)
                 .fit().centerInside()
                  .into(holder.mImageView);
 
-        holder.mArticleAuthorView.setText(holder.mItem.Owner.firstName + " " +holder.mItem.Owner.lastName);
+        holder.mArticleAuthorView.setText(holder.mItem.Creator.name);
         holder.mArticleTitleView.setText(holder.mItem.Name);
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ServiceGenerator {
 
-    public static final String API_BASE_URL = "http://www.cardillsports.com/";
+    public static final String API_BASE_URL = "https://cardillsports-server.herokuapp.com/";
 
     private static OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
 

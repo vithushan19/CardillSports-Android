@@ -27,7 +27,7 @@ public class ArticlePresenter {
     }
 
     public void loadData() {
-        Call<List<CardillContent>> call = mClient.articles();
+        Call<List<CardillContent>> call = mClient.content();
         call.enqueue(new Callback<List<CardillContent>>() {
             @Override
             public void onResponse(Call<List<CardillContent>> responseCall, Response<List<CardillContent>> response) {

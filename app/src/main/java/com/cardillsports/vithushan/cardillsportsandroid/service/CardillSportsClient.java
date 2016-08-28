@@ -12,8 +12,8 @@ import retrofit2.http.GET;
  * Created by vithushan on 7/18/16.
  */
 public interface CardillSportsClient {
-    @GET("/api/articles")
-    Call<List<CardillContent>> articles();
+    @GET("/api/content")
+    Call<List<CardillContent>> content();
 
     @GET("/api/podcasts")
     Call<List<CardillContent>> podcasts();
